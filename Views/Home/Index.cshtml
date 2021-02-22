@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IQueryable<Book>
+
+<!-- Home page -->
+<h2>Hilton's Books</h2>
+
+<!-- Create table to load books into-->
+<table class="table table-active">
+    <tr class="thead-dark">
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>ISBN</th>
+        <th>Classification</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+    <!-- loop through Book Iqueryable and list information for each book in table rows -->
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Title</td>
+            <td>@x.Author</td>
+            <td>@x.Publisher</td>
+            <td>@x.ISBN</td>
+            <td>@x.Classification</td>
+            <td>@x.Category</td>
+            <td>@x.Price</td>
+        </tr>
+    }
+</table>
